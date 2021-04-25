@@ -18,10 +18,10 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
     && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
     && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
 
-RUN usermod -u 1000 www-data
-USER www-data
+# RUN usermod -u 1000 www-data
+USER root
 
-RUN chmod 755 /var/www/
+RUN chmod -R 755 /var/www
 RUN chown -R www-data:www-data /var/www
 
 EXPOSE 9000

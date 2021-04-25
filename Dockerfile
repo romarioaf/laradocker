@@ -21,11 +21,11 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 RUN usermod -u 1000 www-data
 USER www-data
 
-RUN sudo chown root:root /var/www
-RUN sudo chmod 755 /var/www/
+RUN chown root:root /var/www
+RUN chmod 755 /var/www/
 
-RUN sudo chown -R www-data:www-data /var/www
-RUN sudo chmod -R 774 /var/www
+RUN chown -R www-data:www-data /var/www
+RUN chmod -R 774 /var/www
 
 EXPOSE 9000
 
